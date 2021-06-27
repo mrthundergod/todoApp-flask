@@ -1,0 +1,15 @@
+1. Create app.py(import, app, index routing)
+2. create(index.html, base.html) index extending base
+3. render_template this to the html files
+4. create static and templates directories
+5. create main.css and link it to the base file
+6. config app with sqlalchemy and create a db object
+7. create the model using class with all the required fields 
+8. go to cmd python shell, import db from app and run db.create_all() to make the db
+9. create the table layouts in the index file
+10. add methods[] to the index() in app.py with GET and POST as values
+11. create a form in index that sends info as POST 
+12. Edit the index() to save the date from form into a variable then to a new Todo object
+13. commit the value to the DB in a try-exception block
+14. Else condition should push the tasks collection through reder templates
+15. index.html will use jinja forblock to show each task 
