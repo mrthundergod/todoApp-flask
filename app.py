@@ -54,7 +54,8 @@ def delete(id):
     except: 
         return 'Error deleting entry'
 
-# when clicked on update
+# when clicked on update redirects to the specific update page using GET for id 
+# then gets the previous value and updates it on clicking update
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     task=Todo.query.get_or_404(id)

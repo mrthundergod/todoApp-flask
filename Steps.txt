@@ -1,3 +1,4 @@
+0. create a git repo and add required files(readme/gitignore/etc)
 1. Create app.py(import, app, index routing)
 2. create(index.html, base.html) index extending base
 3. render_template this to the html files
@@ -18,4 +19,6 @@
 18. use the db.delete function to delete the task and then commit and redirect to '/'
 19. create the update app.route with POST and GET methods and the id as url
 20. create the update.html file to redirect when button is clicked
-21. update function calls the value of the task had, 
+21. update function calls the value of the task had, and pushed new value to db
+22. install heroku-cli and login to it from cmd and pip install gunicorn
+23. create a heroku instance and create a Procfile
