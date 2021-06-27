@@ -13,3 +13,9 @@
 13. commit the value to the DB in a try-exception block
 14. Else condition should push the tasks collection through reder templates
 15. index.html will use jinja forblock to show each task 
+16. create a delete app.route with url containing the id 
+17. give this url to the href of the button.
+18. use the db.delete function to delete the task and then commit and redirect to '/'
+19. create the update app.route with POST and GET methods and the id as url
+20. create the update.html file to redirect when button is clicked
+21. update function calls the value of the task had, 

@@ -23,34 +23,50 @@ class Todo(db.Model):
         return '<Task %r>' %self.id
 
 #routing urls using decorator 'app.route'
-
+# the if-selse block checks if entry is null and prevents adding it to db
 @app.route('/', methods=['POST','GET'])
 def index():
     if request.method == 'POST':
         task_content = request.form['content']
-        new_task  = Todo(content=task_content)
-
-        try:
-            db.session.add(new_task)
-            db.session.commit()
+        if task_content == '':
             return redirect('/')
-        except: 
-            return 'Error pushing to DB'
-
+        else:
+            new_task  = Todo(content=task_content)
+            try:
+                db.session.add(new_task)
+                db.session.commit()
+                return redirect('/')
+            except: 
+                return 'Error pushing to DB'
     else:
         tasks = Todo.query.order_by(Todo.date_created).all()
         return render_template('index.html', tasks = tasks)
 
-@app.route('/delete/<int:id>', methods=['GET', 'POST'])
+# when the delete url is called it sends the post id as GET which is deleted from the DB using an ORM query
+# after deletion user is redirected to the base url
+@app.route('/delete/<int:id>')
 def delete(id):
     delete_task = Todo.query.get_or_404(id)
-
     try:
         db.session.delete(delete_task)
         db.session.commit()
         return redirect('/')
     except: 
         return 'Error deleting entry'
+
+# when clicked on update
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    task=Todo.query.get_or_404(id)
+    if request.method == 'POST':
+        task.content=request.form['content']
+        try:
+            db.session.commit()
+            return redirect('/')
+        except: 
+            return 'Error updating entry'
+    else:
+        return render_template('update.html', task=task)
 
 
 #usual 'int is main' function
