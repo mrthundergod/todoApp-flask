@@ -1,3 +1,5 @@
+# Basic CRUD app using Flask
+## Creating the CRUD app 
 0. create a git repo and add required files(readme/gitignore/etc)
 1. Create app.py(import, app, index routing)
 2. create(index.html, base.html) index extending base
@@ -11,7 +13,7 @@
 10. add methods[] to the index() in app.py with GET and POST as values
 11. create a form in index that sends info as POST 
 12. Edit the index() to save the date from form into a variable then to a new Todo object
-13. commit the value to the DB in a try-exception block
+13. Commit the value to the DB in a try-exception block
 14. Else condition should push the tasks collection through reder templates
 15. index.html will use jinja forblock to show each task 
 16. create a delete app.route with url containing the id 
@@ -22,3 +24,8 @@
 21. update function calls the value of the task had, and pushed new value to db
 22. install heroku-cli and login to it from cmd and pip install gunicorn
 23. create a heroku instance and create a Procfile
+
+## Implementing Login
+1. Import flask-login
+2. Create views (functions) for login page
+3. brb

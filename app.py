@@ -70,6 +70,8 @@ def update(id):
         return render_template('update.html', task=task)
 
 
+@app.route()
+def
 #usual 'int is main' function
 if __name__=="__main__":
     app.run(debug=True)
