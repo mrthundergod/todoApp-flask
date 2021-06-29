@@ -71,7 +71,9 @@ def update(id):
 
 
 @app.route()
-def
+def login():
+    pass
+
 #usual 'int is main' function
 if __name__=="__main__":
     app.run(debug=True)
